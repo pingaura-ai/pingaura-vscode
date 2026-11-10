@@ -9,3 +9,4 @@ eslint.config.mjs
 vitest.config.ts
 pnpm-lock.yaml
 .gitignore
+.vscode/**
