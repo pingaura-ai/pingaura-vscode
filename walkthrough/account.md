@@ -1,5 +1,3 @@
-# A PingAura AI workspace
+# PingAura AI workspace
 
-PingAura AI tracks how ChatGPT, Gemini, Perplexity, Claude and other AI engines describe your brand.
-
-The extension uses your existing PingAura AI workspace. If you do not have one yet, start at [pingaura.ai](https://www.pingaura.ai).
+You need a PingAura AI workspace with a domain added. Don't have one? Start at [pingaura.ai](https://www.pingaura.ai).

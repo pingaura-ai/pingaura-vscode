@@ -1,8 +1,6 @@
-# Ask in plain language
+# Things to ask
 
-- What is my AI visibility score this week, and what changed?
-- Which competitors are cited instead of us for our top prompts?
+- What's my AI visibility score this week?
+- Which competitors get cited instead of us?
 - Which site audit issues should I fix first?
-- Draft an article for the prompt we are losing most.
-
-See every tool in the [MCP docs](https://www.pingaura.ai/docs/mcp/mcp-server).
+- Draft an article for the prompt we're losing most.

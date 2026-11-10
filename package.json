@@ -1,7 +1,7 @@
 {
   "name": "pingaura-ai",
   "displayName": "PingAura AI",
-  "description": "Bring PingAura AI's AEO tools into VS Code chat: AI visibility, citations, site audits, prompts and content, through the PingAura MCP server.",
+  "description": "PingAura AI's AEO tools in VS Code chat: AI visibility, citations, site audits, prompts and content.",
   "version": "0.1.0",
   "publisher": "pingaura",
   "license": "Apache-2.0",
@@ -68,7 +68,8 @@
           "type": "string",
           "default": "https://www.pingaura.ai/api/mcp",
           "format": "uri",
-          "markdownDescription": "PingAura MCP server URL. Leave the default unless PingAura support gives you another one."
+          "markdownDescription": "PingAura MCP server URL. Only pingaura.ai hosts are accepted. Leave the default unless support asks you to change it.",
+          "scope": "application"
         }
       }
     },
@@ -76,28 +77,28 @@
       {
         "id": "getStarted",
         "title": "Get started with PingAura AI",
-        "description": "Use PingAura AI's AEO tools from VS Code chat.",
+        "description": "Use PingAura AI from VS Code chat.",
         "steps": [
           {
             "id": "account",
-            "title": "Have a PingAura AI account",
-            "description": "You need a PingAura AI workspace with a domain added.\n[Open PingAura AI](command:pingaura.openDashboard)",
+            "title": "Have a PingAura AI workspace",
+            "description": "You need a workspace with a domain added.\n[Open PingAura AI](command:pingaura.openDashboard)",
             "media": {
               "markdown": "walkthrough/account.md"
             }
           },
           {
             "id": "signIn",
-            "title": "Sign in once",
-            "description": "Open Chat in Agent mode and ask about your AI visibility. The first time, VS Code opens the PingAura AI sign-in in your browser. Approve it, and you are connected.\n[Open Chat](command:workbench.action.chat.open)",
+            "title": "Sign in",
+            "description": "Ask a question in Chat (Agent mode). Approve the sign-in when your browser opens.\n[Open Chat](command:workbench.action.chat.open)",
             "media": {
               "markdown": "walkthrough/sign-in.md"
             }
           },
           {
             "id": "ask",
-            "title": "Ask in plain language",
-            "description": "Try: \"What is my AI visibility score this week?\" or \"Which site audit issues should I fix first?\"\n[See all tools](command:pingaura.openDocs)",
+            "title": "Ask away",
+            "description": "Try \"What's my AI visibility score this week?\"\n[See all tools](command:pingaura.openDocs)",
             "media": {
               "markdown": "walkthrough/ask.md"
             }
@@ -116,7 +117,7 @@
     "package": "vsce package --no-dependencies"
   },
   "devDependencies": {
-    "@types/node": "^20.19.43",
+    "@types/node": "^26.6.6",
     "@types/vscode": "1.101.0",
     "@vscode/vsce": "^4.1.0",
     "esbuild": "^0.28.2",
@@ -126,5 +127,11 @@
     "typescript-eslint": "^8.72.2",
     "vitest": "^5.1.0"
   },
-  "packageManager": "pnpm@10.33.2"
+  "packageManager": "pnpm@10.33.2",
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  }
 }

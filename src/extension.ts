@@ -2,22 +2,19 @@ import * as vscode from 'vscode';
 
 import { DASHBOARD_URL, DOCS_URL, resolveServerUrl } from './server';
 
-const PROVIDER_ID = 'pingaura';
-
-function serverUrl(): string {
+function serverUrl() {
   return resolveServerUrl(
-    vscode.workspace.getConfiguration('pingaura').get<string>('serverUrl'),
+    vscode.workspace.getConfiguration('pingaura').get('serverUrl'),
   );
 }
 
-export function activate(context: vscode.ExtensionContext): void {
+export function activate(context: vscode.ExtensionContext) {
   const changed = new vscode.EventEmitter<void>();
-  const version = String(context.extension.packageJSON.version ?? '0.0.0');
+  const version = String(context.extension.packageJSON.version);
 
-  // VS Code signs the user in through the server's OAuth metadata the first time a tool is used.
   context.subscriptions.push(
     changed,
-    vscode.lm.registerMcpServerDefinitionProvider(PROVIDER_ID, {
+    vscode.lm.registerMcpServerDefinitionProvider('pingaura', {
       onDidChangeMcpServerDefinitions: changed.event,
       provideMcpServerDefinitions: () => [
         new vscode.McpHttpServerDefinition(
@@ -27,7 +24,6 @@ export function activate(context: vscode.ExtensionContext): void {
           version,
         ),
       ],
-      resolveMcpServerDefinition: (server) => server,
     }),
     vscode.workspace.onDidChangeConfiguration((event) => {
       if (event.affectsConfiguration('pingaura.serverUrl')) changed.fire();
@@ -48,4 +44,4 @@ export function activate(context: vscode.ExtensionContext): void {
   );
 }
 
-export function deactivate(): void {}
+export function deactivate() {}

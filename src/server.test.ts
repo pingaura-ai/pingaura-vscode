@@ -3,31 +3,30 @@ import { describe, expect, it } from 'vitest';
 import { DEFAULT_SERVER_URL, resolveServerUrl } from './server';
 
 describe('resolveServerUrl', () => {
-  it('uses the PingAura server by default', () => {
+  it('defaults to the PingAura server', () => {
     expect(resolveServerUrl(undefined)).toBe(DEFAULT_SERVER_URL);
-    expect(resolveServerUrl('  ')).toBe(DEFAULT_SERVER_URL);
+    expect(resolveServerUrl(' ')).toBe(DEFAULT_SERVER_URL);
   });
 
-  it('keeps a configured https URL', () => {
+  it('accepts pingaura.ai hosts and localhost', () => {
     expect(resolveServerUrl('https://staging.pingaura.ai/api/mcp')).toBe(
       'https://staging.pingaura.ai/api/mcp',
     );
-  });
-
-  it('allows http only on localhost', () => {
     expect(resolveServerUrl('http://localhost:3000/api/mcp')).toBe(
       'http://localhost:3000/api/mcp',
     );
-    expect(resolveServerUrl('http://example.com/api/mcp')).toBe(
-      DEFAULT_SERVER_URL,
-    );
   });
 
-  it('refuses invalid URLs, other schemes and embedded credentials', () => {
-    expect(resolveServerUrl('not a url')).toBe(DEFAULT_SERVER_URL);
-    expect(resolveServerUrl('file:///etc/passwd')).toBe(DEFAULT_SERVER_URL);
-    expect(resolveServerUrl('https://user:pass@example.com/mcp')).toBe(
-      DEFAULT_SERVER_URL,
-    );
+  it('rejects other hosts, schemes and credentials', () => {
+    for (const url of [
+      'https://example.com/api/mcp',
+      'https://pingaura.ai.example.com/mcp',
+      'http://staging.pingaura.ai/api/mcp',
+      'file:///etc/passwd',
+      'https://user:pass@www.pingaura.ai/api/mcp',
+      'not a url',
+    ]) {
+      expect(resolveServerUrl(url)).toBe(DEFAULT_SERVER_URL);
+    }
   });
 });
