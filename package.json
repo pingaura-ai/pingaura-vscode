@@ -1,7 +1,7 @@
 {
   "name": "pingaura-ai",
-  "displayName": "PingAura AI",
-  "description": "PingAura AI's AEO tools in VS Code chat: AI visibility, citations, site audits, prompts and content.",
+  "displayName": "PingAura AI: Agentic Marketing",
+  "description": "Agentic marketing from VS Code chat. Your agent checks AI visibility, finds what to fix and drafts the content, with PingAura AI.",
   "version": "0.1.0",
   "publisher": "pingaura",
   "license": "Apache-2.0",
@@ -22,6 +22,8 @@
     "Chat"
   ],
   "keywords": [
+    "agentic marketing",
+    "ai marketing",
     "mcp",
     "aeo",
     "geo",
@@ -78,8 +80,8 @@
     "walkthroughs": [
       {
         "id": "getStarted",
-        "title": "Get started with PingAura AI",
-        "description": "Use PingAura AI from VS Code chat.",
+        "title": "Get started with agentic marketing",
+        "description": "Run your AI visibility work from VS Code chat.",
         "steps": [
           {
             "id": "account",
@@ -100,7 +102,7 @@
           {
             "id": "ask",
             "title": "Ask away",
-            "description": "Try \"What's my AI visibility score this week?\"\n[See all tools](command:pingaura.openDocs)",
+            "description": "Try \"Which prompts are we losing, and what should we publish to win them?\"\n[See all tools](command:pingaura.openDocs)",
             "media": {
               "markdown": "walkthrough/ask.md"
             }

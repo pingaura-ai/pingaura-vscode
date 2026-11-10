@@ -2,6 +2,6 @@
 
 ## 0.1.0
 
-- Registers the PingAura AI MCP server for VS Code chat, with OAuth sign-in.
+- Agentic marketing from VS Code chat through the PingAura AI MCP server, with OAuth sign-in.
 - Commands: Get Started, Open Dashboard, Open MCP Docs.
 - Getting-started walkthrough.

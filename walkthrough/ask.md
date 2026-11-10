@@ -1,6 +1,6 @@
 # Things to ask
 
-- What's my AI visibility score this week?
-- Which competitors get cited instead of us?
-- Which site audit issues should I fix first?
+- What's our AI visibility this week, and what changed?
+- Which prompts are we losing, and what should we publish to win them?
+- Which site issues are costing us citations?
 - Draft an article for the prompt we're losing most.
