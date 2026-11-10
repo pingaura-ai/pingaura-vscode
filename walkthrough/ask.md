@@ -1,6 +1,7 @@
-# Things to ask
+# Fix your site
 
-- What's our AI visibility this week, and what changed?
+Open your website's code and ask:
+
+- Fix the top site audit issues PingAura found.
+- Add the missing schema on our product pages.
 - Which prompts are we losing, and what should we publish to win them?
-- Which site issues are costing us citations?
-- Draft an article for the prompt we're losing most.

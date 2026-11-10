@@ -1,12 +1,19 @@
 # PingAura AI: Agentic Marketing
 
-Run your marketing from VS Code chat. Your agent uses [PingAura AI](https://www.pingaura.ai) to see how ChatGPT, Gemini, Perplexity and Claude talk about your brand, find what to fix, and draft the content that wins the answer.
+Run your marketing from VS Code chat. Your agent uses [PingAura AI](https://www.pingaura.ai) to see how ChatGPT, Gemini, Perplexity and Claude talk about your brand, then fixes your site right in your code.
 
-## What you can ask
+## Fix your site
+
+Open your website's project and ask:
+
+> Fix the top site audit issues PingAura found.
+
+The agent reads the issues from your latest PingAura audit (missing schema, weak titles, pages AI crawlers can't read), edits the files, and marks each issue fixed in PingAura. Review the changes like any other diff.
+
+## Other things to ask
 
 - What's our AI visibility this week, and what changed?
 - Which competitors get recommended instead of us?
-- Which site issues are costing us citations? Fix the top three.
 - Draft an article for the prompt we're losing most.
 
 ## Setup
